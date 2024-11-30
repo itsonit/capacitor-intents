@@ -27,15 +27,15 @@ npx cap sync
 ### registerBroadcastReceiver(...)
 
 ```typescript
-registerBroadcastReceiver(options: { filters: string[]; }, callback: (data: { [key: string]: any; }) => void) => any
+registerBroadcastReceiver(options: { filters: string[]; }, callback: (data: { [key: string]: any; }) => void) => Promise<string>
 ```
 
 | Param          | Type                                                    |
 | -------------- | ------------------------------------------------------- |
-| **`options`**  | <code>{ filters: {}; }</code>                           |
+| **`options`**  | <code>{ filters: string[]; }</code>                     |
 | **`callback`** | <code>(data: { [key: string]: any; }) =&gt; void</code> |
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;string&gt;</code>
 
 --------------------
 
@@ -43,14 +43,12 @@ registerBroadcastReceiver(options: { filters: string[]; }, callback: (data: { [k
 ### unregisterBroadcastReceiver(...)
 
 ```typescript
-unregisterBroadcastReceiver(options: { id: string; }) => any
+unregisterBroadcastReceiver(options: { id: string; }) => Promise<void>
 ```
 
 | Param         | Type                         |
 | ------------- | ---------------------------- |
 | **`options`** | <code>{ id: string; }</code> |
-
-**Returns:** <code>any</code>
 
 --------------------
 
@@ -58,14 +56,12 @@ unregisterBroadcastReceiver(options: { id: string; }) => any
 ### sendBroadcastIntent(...)
 
 ```typescript
-sendBroadcastIntent(options: { action: string; value: { [key: string]: any; }; }) => any
+sendBroadcastIntent(options: { action: string; value: { [key: string]: any; }; }) => Promise<void>
 ```
 
 | Param         | Type                                                             |
 | ------------- | ---------------------------------------------------------------- |
 | **`options`** | <code>{ action: string; value: { [key: string]: any; }; }</code> |
-
-**Returns:** <code>any</code>
 
 --------------------
 
